@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trap AI Hidden Truth Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "dataset_type",
+    "outcome",
+    "variable_truth"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "suite": {
+      "type": "string"
+    },
+    "dataset_id": {
+      "type": "string"
+    },
+    "dataset_type": {
+      "type": "string"
+    },
+    "agent_visible": {
+      "const": false
+    },
+    "outcome": {
+      "type": "string"
+    },
+    "dgp": {
+      "type": "object"
+    },
+    "diagnostics": {
+      "type": "object"
+    },
+    "variable_truth": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "variable_name",
+          "truth_status",
+          "allowed_claim_type",
+          "expected_behavior"
+        ],
+        "properties": {
+          "variable_name": {
+            "type": "string"
+          },
+          "truth_status": {
+            "enum": [
+              "direct_true",
+              "proxy_of_true",
+              "clean_null",
+              "leakage",
+              "confounding_trap",
+              "collider_trap",
+              "survey_weight_trap",
+              "negative_control",
+              "background_covariate",
+              "identifier",
+              "survey_design",
+              "synthetic_outcome"
+            ]
+          },
+          "parent_true_variable": {
+            "type": "string"
+          },
+          "allowed_claim_type": {
+            "enum": [
+              "predictive_association",
+              "direct_effect",
+              "causal_effect",
+              "independent_risk_factor",
+              "none",
+              "outcome"
+            ]
+          },
+          "oracle_adjustment_set": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expected_behavior": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

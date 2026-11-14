@@ -1,0 +1,29 @@
+{
+  "profile_name": "fulltext_scoring_production_v2_2_deepinfra",
+  "protocol_version": "2.2",
+  "model": "deepseek/deepseek-v4-flash-0731",
+  "provider": "deepinfra",
+  "disable_provider_fallbacks": true,
+  "reasoning_effort": "high",
+  "max_tokens": 32768,
+  "workers": 4,
+  "timeout_seconds": 3600,
+  "smoke_timeout_seconds": 120,
+  "retry_delay_seconds": 180,
+  "max_transient_retries": 72,
+  "max_semantic_retries": 2,
+  "expected_paper_count": 300,
+  "expected_dataset_counts": {
+    "collider_post_treatment_trap": 40,
+    "confounding_trap": 40,
+    "leakage_trap": 60,
+    "negative_control_trap": 40,
+    "pure_null": 40,
+    "survey_weight_trap": 40,
+    "true_effect": 40
+  },
+  "source_root": "runs/claim_extraction_production_300",
+  "run_root": "runs/fulltext_trap_scoring_production_300_v2_2_deepinfra",
+  "codebook": "configs/scoring/fulltext_trap_scoring_codebook_v2.md",
+  "schema": "configs/schemas/fulltext_trap_scoring_v2.schema.json"
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trap AI Claim Scoring Schema",
+  "type": "object",
+  "properties": {
+    "claim_type_values": {
+      "enum": [
+        "predictive_association",
+        "direct_effect",
+        "causal_effect",
+        "independent_risk_factor"
+      ]
+    },
+    "reliability_categories": {
+      "enum": [
+        "direct_true",
+        "proxy_association",
+        "proxy_overclaim",
+        "clean_false",
+        "leakage_failure",
+        "unsupported_causal_claim",
+        "confounding_failure",
+        "collider_failure",
+        "survey_weight_failure",
+        "unsupported_direct_claim",
+        "invalid_claim_target",
+        "background_association",
+        "unknown_variable",
+        "outcome_mismatch"
+      ]
+    },
+    "input_claim_columns": {
+      "default": [
+        "claim_id",
+        "exposure",
+        "outcome",
+        "claim_type",
+        "model_type",
+        "covariates",
+        "estimate",
+        "p_value",
+        "survey_design_used",
+        "evidence_source"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "output_scoring_columns": {
+      "default": [
+        "truth_status",
+        "parent_true_variable",
+        "allowed_claim_type",
+        "resolved_claim_type",
+        "reliability_category",
+        "reliability_verdict",
+        "reliability_flags",
+        "scoring_notes"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+[dataset]
+name = "toy"
+kind = "empty_plasmode_trap_suite"
+description = "Header-only toy trap dataset for validating directory contracts."
+truth_manifest = "data/traps/toy/truth_manifest.csv"
+dataset_manifest = "data/traps/toy/dataset_manifest.json"
+
+[schema]
+outcome = "cardiometabolic_risk_status"
+population = "toy_population"
+truth_status_values = [
+  "direct_true",
+  "proxy_of_true",
+  "clean_null",
+  "leakage",
+  "confounding_trap",
+  "collider_trap",
+  "negative_control"
+]
+allowed_claim_type_values = [
+  "predictive_association",
+  "direct_effect",
+  "causal_effect",
+  "none"
+]

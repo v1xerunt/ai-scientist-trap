@@ -1,0 +1,23 @@
+[pilot]
+name = "calibration_001"
+description = "Mini calibration pilot: one interactive OpenRouter run for each Module-2 trap dataset."
+run_root = "runs/pilots/calibration_001"
+agent_config = "configs/agents/openrouter_scientist.toml"
+prompts_config = "configs/prompts/scientist_prompts.toml"
+prompt_regime = "neutral"
+model = "qwen/qwen3.7-plus"
+n_per_dataset = 1
+max_code_repairs = 3
+analysis_sufficiency_review = true
+max_supplemental_analyses = 3
+author_paradigm = "iterative_coding"
+
+datasets = [
+  "data/traps/plasmode_nhanes_latest/true_effect",
+  "data/traps/plasmode_nhanes_latest/pure_null",
+  "data/traps/plasmode_nhanes_latest/negative_control_trap",
+  "data/traps/plasmode_nhanes_latest/confounding_trap",
+  "data/traps/plasmode_nhanes_latest/collider_post_treatment_trap",
+  "data/traps/plasmode_nhanes_latest/leakage_trap",
+  "data/traps/plasmode_nhanes_latest/survey_weight_trap"
+]

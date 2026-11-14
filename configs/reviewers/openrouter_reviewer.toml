@@ -1,0 +1,12 @@
+[provider]
+name = "openrouter"
+base_url = "https://openrouter.ai/api/v1"
+chat_endpoint = "/chat/completions"
+api_key_env = "OPENROUTER_API_KEY"
+timeout_seconds = 180
+http_referer_env = "OPENROUTER_HTTP_REFERER"
+app_title_env = "OPENROUTER_APP_TITLE"
+
+[model]
+default = "deepseek/deepseek-v4-pro"
+temperature = 0.2

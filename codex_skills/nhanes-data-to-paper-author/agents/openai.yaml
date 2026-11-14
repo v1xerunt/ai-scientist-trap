@@ -1,0 +1,4 @@
+interface:
+  display_name: "NHANES Data-to-Paper Author"
+  short_description: "Structured staged mini-paper workflow"
+  default_prompt: "Use $nhanes-data-to-paper-author to generate one empirical mini-paper in this workspace."

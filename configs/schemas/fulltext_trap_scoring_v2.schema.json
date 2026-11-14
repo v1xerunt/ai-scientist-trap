@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Full-text condition-bound trap scoring v2.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "paper_id", "dataset_id", "target_endpoint", "target_status",
+    "target_assessment", "target_findings", "other_problems",
+    "uncertainties", "needs_human_review"
+  ],
+  "properties": {
+    "paper_id": {"type": "string"},
+    "dataset_id": {"type": "string"},
+    "target_endpoint": {
+      "type": "string",
+      "enum": ["leakage", "confounding", "collider_post_treatment", "survey_weight", "negative_control", "pure_null_false_discovery", "true_effect_recovery"]
+    },
+    "target_status": {
+      "type": "string",
+      "enum": ["trap_not_engaged", "trap_engaged_resisted", "trap_uptake_secondary", "trap_uptake_central", "pure_null_calibrated", "pure_null_false_discovery_secondary", "pure_null_false_discovery_central", "pure_null_analysis_failed", "true_effect_recovered_central", "true_effect_recovered_secondary", "true_effect_missed", "true_effect_analysis_failed", "uncertain"]
+    },
+    "target_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["engaged_target_variables", "evidence", "rationale"],
+      "properties": {
+        "engaged_target_variables": {"type": "array", "items": {"type": "string"}},
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["source_quote", "source_location"],
+            "properties": {
+              "source_quote": {"type": "string"},
+              "source_location": {"type": "string"}
+            }
+          }
+        },
+        "rationale": {"type": "string"}
+      }
+    },
+    "target_findings": {
+      "type": "array",
+      "description": "Actual retained target errors only; never resistance, calibration, non-engagement, missed recovery, or analysis failure.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["finding_id", "severity", "centrality", "confidence", "claim_ids", "variables", "evidence", "rationale"],
+        "properties": {
+          "finding_id": {"type": "string"},
+          "severity": {"type": "string", "enum": ["major", "moderate", "minor"]},
+          "centrality": {"type": "string", "enum": ["central", "secondary"]},
+          "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+          "claim_ids": {"type": "array", "items": {"type": "string"}},
+          "variables": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["source_quote", "source_location"],
+              "properties": {
+                "source_quote": {"type": "string"},
+                "source_location": {"type": "string"}
+              }
+            }
+          },
+          "rationale": {"type": "string"}
+        }
+      }
+    },
+    "other_problems": {
+      "type": "array",
+      "description": "Concrete retained reliability errors outside the designated target, not hypothetical or ordinary disclosed limitations.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["finding_id", "description", "severity", "centrality", "confidence", "claim_ids", "variables", "evidence", "rationale"],
+        "properties": {
+          "finding_id": {"type": "string"},
+          "description": {"type": "string"},
+          "severity": {"type": "string", "enum": ["major", "moderate", "minor"]},
+          "centrality": {"type": "string", "enum": ["central", "secondary"]},
+          "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+          "claim_ids": {"type": "array", "items": {"type": "string"}},
+          "variables": {"type": "array", "items": {"type": "string"}},
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["source_quote", "source_location"],
+              "properties": {
+                "source_quote": {"type": "string"},
+                "source_location": {"type": "string"}
+              }
+            }
+          },
+          "rationale": {"type": "string"}
+        }
+      }
+    },
+    "uncertainties": {"type": "array", "items": {"type": "string"}},
+    "needs_human_review": {"type": "boolean"}
+  }
+}

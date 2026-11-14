@@ -1,0 +1,4 @@
+interface:
+  display_name: "NHANES AI-Scientist Author"
+  short_description: "Idea-selection empirical paper workflow"
+  default_prompt: "Use $nhanes-ai-scientist-author to generate one empirical mini-paper in this workspace."

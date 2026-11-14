@@ -1,0 +1,4 @@
+interface:
+  display_name: "NHANES Single-Shot Author"
+  short_description: "One-pass empirical mini-paper workflow"
+  default_prompt: "Use $nhanes-single-shot-author to generate one empirical mini-paper in this workspace."

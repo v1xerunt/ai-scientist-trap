@@ -1,0 +1,17 @@
+[scientist_agent]
+name = "toy-scientist"
+provider = "none"
+model = "placeholder"
+temperature = 0.0
+
+[reviewer]
+name = "toy-reviewer"
+provider = "none"
+model = "placeholder"
+temperature = 0.0
+
+[verifier]
+name = "toy-statistical-verifier"
+provider = "none"
+model = "placeholder"
+temperature = 0.0

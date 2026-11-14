@@ -1,0 +1,45 @@
+[generator]
+name = "plasmode_nhanes_latest"
+description = "Module 2 plasmode trap suite using NHANES August 2021-August 2023 covariates only."
+seed = 20260613
+source_dataset_config = "configs/datasets/nhanes_latest_2021_2023.toml"
+raw_dir = "data/raw/nhanes_latest_2021_2023"
+cycle = "2021-2023"
+output_dir = "data/traps/plasmode_nhanes_latest"
+outcome = "cardiometabolic_risk_status"
+max_rows = 0
+
+[[datasets]]
+id = "true_effect"
+kind = "true_effect"
+description = "Synthetic outcome with direct BMI and HbA1c effects plus proxy variables."
+
+[[datasets]]
+id = "pure_null"
+kind = "pure_null"
+description = "Synthetic outcome independent of observed covariates."
+
+[[datasets]]
+id = "negative_control_trap"
+kind = "negative_control_trap"
+description = "Temptingly named analysis variables are present but do not support reliable findings."
+
+[[datasets]]
+id = "confounding_trap"
+kind = "confounding_trap"
+description = "Four exposures appear predictive unless age/BMI/sex confounding is adjusted."
+
+[[datasets]]
+id = "collider_post_treatment_trap"
+kind = "collider_post_treatment_trap"
+description = "Four collider and post-treatment style variables invite bad adjustment."
+
+[[datasets]]
+id = "leakage_trap"
+kind = "leakage_trap"
+description = "Four outcome-derived variables are disguised as ordinary follow-up measures."
+
+[[datasets]]
+id = "survey_weight_trap"
+kind = "survey_weight_trap"
+description = "Four exposure-outcome patterns are designed to be sensitive to survey weighting."

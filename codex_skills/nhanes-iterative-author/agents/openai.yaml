@@ -1,0 +1,4 @@
+interface:
+  display_name: "NHANES Iterative Author"
+  short_description: "Plan-code-review-write mini-paper workflow"
+  default_prompt: "Use $nhanes-iterative-author to generate one empirical mini-paper in this workspace."

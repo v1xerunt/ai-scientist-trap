@@ -1,0 +1,15 @@
+[audit]
+name = "plasmode_nhanes_latest_freeze"
+suite_manifest = "data/traps/plasmode_nhanes_latest/suite_manifest.json"
+output_dir = "results/data_freeze/plasmode_nhanes_latest"
+raw_download_summary = "data/raw/nhanes_latest_2021_2023/download_summary.json"
+source_files = [
+  "configs/datasets/plasmode_nhanes_latest.toml",
+  "configs/datasets/nhanes_latest_2021_2023.toml",
+  "src/trap_ai/plasmode.py",
+  "src/trap_ai/claim_scoring.py",
+  "src/trap_ai/validation.py",
+  "docs/reference_analysis_protocol.md",
+  "configs/schemas/truth_manifest.schema.json",
+  "configs/schemas/claim_scoring.schema.json"
+]

@@ -1,0 +1,12 @@
+[provider]
+name = "openai"
+base_url = "https://api.openai.com/v1"
+chat_endpoint = "/chat/completions"
+api_key_env = "OPENAI_API_KEY"
+timeout_seconds = 180
+
+[model]
+default = "gpt-5.5"
+reasoning_effort = "medium"
+prompt_cache_key = "trap-ai-claim-extraction-v1"
+prompt_cache_retention = "24h"

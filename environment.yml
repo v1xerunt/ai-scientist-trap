@@ -1,0 +1,27 @@
+name: trap-ai
+
+channels:
+  - conda-forge
+
+dependencies:
+  # Keep the project on one tested Python minor version. The source package
+  # itself requires Python >=3.11.
+  - python=3.11
+  - pip
+  - setuptools>=68
+
+  # Core project dependencies.
+  - numpy>=1.26,<3
+  - pandas>=2.0,<4
+
+  # Libraries available to the analysis code that the AI scientists write and execute.
+  - scipy>=1.11,<2
+  - statsmodels>=0.14,<1
+  - scikit-learn>=1.4,<2
+  - matplotlib>=3.8,<4
+  - openpyxl>=3.1,<4
+  - seaborn>=0.13,<1
+  - patsy>=0.5,<2
+
+  # Tests.
+  - pytest>=8,<10

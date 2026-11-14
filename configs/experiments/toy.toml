@@ -1,0 +1,33 @@
+[experiment]
+name = "toy"
+description = "Phase-1 empty toy experiment scaffold."
+seed = 20260613
+run_id = "run_0001"
+dataset_config = "configs/datasets/toy.toml"
+model_config = "configs/models/toy.toml"
+
+[paths]
+raw_data = "data/raw"
+processed_data = "data/processed"
+trap_data = "data/traps"
+runs = "runs"
+results = "results"
+
+[run_artifacts]
+directories = [
+  "logs",
+  "code",
+  "papers",
+  "claim_tables",
+  "artifacts/figures",
+  "artifacts/tables",
+  "metadata"
+]
+
+[result_artifacts]
+directories = [
+  "scores",
+  "figures",
+  "statistics",
+  "tables"
+]

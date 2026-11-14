@@ -1,0 +1,91 @@
+[dataset]
+name = "nhanes_latest_2021_2023"
+description = "Default public-use NHANES August 2021-August 2023 subset for trap-suite construction."
+base_url = "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public"
+raw_dir = "data/raw/nhanes_latest_2021_2023"
+manifest_csv = "data/raw/nhanes_latest_2021_2023/download_manifest.csv"
+summary_json = "data/raw/nhanes_latest_2021_2023/download_summary.json"
+download_extensions = ["xpt", "htm"]
+source_pages = [
+  "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?Cycle=2021-2023",
+  "https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Demographics&Cycle=2021-2023",
+  "https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Examination&Cycle=2021-2023",
+  "https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Laboratory&Cycle=2021-2023",
+  "https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Questionnaire&Cycle=2021-2023",
+  "https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Dietary&Cycle=2021-2023"
+]
+
+[[cycles]]
+label = "2021-2023"
+year = 2021
+suffix = "L"
+
+[[files]]
+component = "Demographics"
+stem = "DEMO"
+description = "Demographic variables and sample weights"
+
+[[files]]
+component = "Examination"
+stem = "BMX"
+description = "Body measures"
+
+[[files]]
+component = "Examination"
+stem = "BPXO"
+description = "Blood pressure - oscillometric measurements"
+
+[[files]]
+component = "Laboratory"
+stem = "GHB"
+description = "Glycohemoglobin"
+
+[[files]]
+component = "Laboratory"
+stem = "HSCRP"
+description = "High-sensitivity C-reactive protein"
+
+[[files]]
+component = "Laboratory"
+stem = "TCHOL"
+description = "Total cholesterol"
+
+[[files]]
+component = "Laboratory"
+stem = "HDL"
+description = "HDL cholesterol"
+
+[[files]]
+component = "Questionnaire"
+stem = "ALQ"
+description = "Alcohol use"
+
+[[files]]
+component = "Questionnaire"
+stem = "DIQ"
+description = "Diabetes"
+
+[[files]]
+component = "Questionnaire"
+stem = "MCQ"
+description = "Medical conditions"
+
+[[files]]
+component = "Questionnaire"
+stem = "PAQ"
+description = "Physical activity"
+
+[[files]]
+component = "Questionnaire"
+stem = "SMQ"
+description = "Smoking - cigarette use"
+
+[[files]]
+component = "Dietary"
+stem = "DR1TOT"
+description = "Total nutrient intakes, first day"
+
+[[files]]
+component = "Dietary"
+stem = "DR2TOT"
+description = "Total nutrient intakes, second day"
