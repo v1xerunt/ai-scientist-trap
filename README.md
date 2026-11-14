@@ -130,3 +130,8 @@ Rank pools of full manuscripts with a blinded AI editor (dry run by default, add
 ```bash
 python scripts/run_openrouter_selection_reviewer.py --help
 ```
+
+## License
+
+This code is released under the Creative Commons Attribution 4.0 International
+License (CC BY 4.0). See `LICENSE`.

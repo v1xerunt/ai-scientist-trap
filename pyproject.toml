@@ -7,6 +7,7 @@ name = "trap-ai"
 version = "0.1.0"
 description = "Reproducible scaffold for AI scientist trap-suite experiments."
 readme = "README.md"
+license = {text = "CC-BY-4.0"}
 requires-python = ">=3.11"
 dependencies = [
   "numpy>=1.26",
