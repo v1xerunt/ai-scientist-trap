@@ -133,5 +133,4 @@ python scripts/run_openrouter_selection_reviewer.py --help
 
 ## License
 
-This code is released under the Creative Commons Attribution 4.0 International
-License (CC BY 4.0). See `LICENSE`.
+This code is released under the MIT License. See `LICENSE`.
